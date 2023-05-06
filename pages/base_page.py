@@ -52,6 +52,7 @@ class BasePage():
     def should_go_to_legal_person_book(self):
         legal_link = self.browser.find_element(*BasePageLocators.LEGAL_PERSON_BUTTON)
         legal_link.click()
+        assert self.browser.url_contains('https://www.ozon.ru/business/')
 
     def should_see_help_link(self):
         assert self.is_element_present(*BasePageLocators.HELP_LINK), "There is no help link"
